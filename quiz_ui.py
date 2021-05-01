@@ -11,4 +11,13 @@ class QuizInterface:
         self.window.title("Quizzler")
         self.window.config(padx=20, pady=20, bg=THEME_COLOR)
 
+        self.canvas = Canvas(width=300, height=250, bg="white")
+        self.question_text = self.canvas.create_text(
+            150,
+            125,
+            width=280,
+            text="Some Question Text", fill=THEME_COLOR,
+            font=('Arial', 20, "italic"))
+        self.canvas.grid(row=1, column=0, columnspan=2, pady=50)
+
         self.window.mainloop()
